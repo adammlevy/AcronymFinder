@@ -13,6 +13,9 @@
 		125738C21C9F48E60064DF03 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 125738C01C9F48E60064DF03 /* Main.storyboard */; };
 		125738C41C9F48E60064DF03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 125738C31C9F48E60064DF03 /* Assets.xcassets */; };
 		125738C71C9F48E60064DF03 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 125738C51C9F48E60064DF03 /* LaunchScreen.storyboard */; };
+		125738D31C9F4F930064DF03 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 125738D21C9F4F930064DF03 /* Foundation.framework */; };
+		125738D51C9F4F990064DF03 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 125738D41C9F4F990064DF03 /* UIKit.framework */; };
+		125738D71C9F4FA30064DF03 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 125738D61C9F4FA30064DF03 /* CoreGraphics.framework */; };
 		4710D72EBF4A2BEBCB10B1DE /* libPods-AcronymFinder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E84B1381A96ED6C351CB48A4 /* libPods-AcronymFinder.a */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +30,9 @@
 		125738C31C9F48E60064DF03 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		125738C61C9F48E60064DF03 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		125738C81C9F48E60064DF03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		125738D21C9F4F930064DF03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		125738D41C9F4F990064DF03 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		125738D61C9F4FA30064DF03 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		B337493AA4F73D8789DF2475 /* Pods-AcronymFinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AcronymFinder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AcronymFinder/Pods-AcronymFinder.debug.xcconfig"; sourceTree = "<group>"; };
 		D578581B977F2C783B434D96 /* Pods-AcronymFinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AcronymFinder.release.xcconfig"; path = "Pods/Target Support Files/Pods-AcronymFinder/Pods-AcronymFinder.release.xcconfig"; sourceTree = "<group>"; };
 		E84B1381A96ED6C351CB48A4 /* libPods-AcronymFinder.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AcronymFinder.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -37,6 +43,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				125738D71C9F4FA30064DF03 /* CoreGraphics.framework in Frameworks */,
+				125738D51C9F4F990064DF03 /* UIKit.framework in Frameworks */,
+				125738D31C9F4F930064DF03 /* Foundation.framework in Frameworks */,
 				4710D72EBF4A2BEBCB10B1DE /* libPods-AcronymFinder.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -65,6 +74,7 @@
 		125738B61C9F48E60064DF03 /* AcronymFinder */ = {
 			isa = PBXGroup;
 			children = (
+				125738D11C9F4DCA0064DF03 /* Model */,
 				125738BA1C9F48E60064DF03 /* AppDelegate.h */,
 				125738BB1C9F48E60064DF03 /* AppDelegate.m */,
 				125738BD1C9F48E60064DF03 /* ViewController.h */,
@@ -86,6 +96,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		125738D11C9F4DCA0064DF03 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		DA13A5067CABA32D3C36B2A0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +115,9 @@
 		EF891C0C640540CCDC2AEBA6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				125738D61C9F4FA30064DF03 /* CoreGraphics.framework */,
+				125738D41C9F4F990064DF03 /* UIKit.framework */,
+				125738D21C9F4F930064DF03 /* Foundation.framework */,
 				E84B1381A96ED6C351CB48A4 /* libPods-AcronymFinder.a */,
 			);
 			name = Frameworks;
