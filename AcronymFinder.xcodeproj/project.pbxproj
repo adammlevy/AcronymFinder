@@ -16,6 +16,8 @@
 		125738D31C9F4F930064DF03 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 125738D21C9F4F930064DF03 /* Foundation.framework */; };
 		125738D51C9F4F990064DF03 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 125738D41C9F4F990064DF03 /* UIKit.framework */; };
 		125738D71C9F4FA30064DF03 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 125738D61C9F4FA30064DF03 /* CoreGraphics.framework */; };
+		125738DD1C9F577A0064DF03 /* ShortFormAcronymData.m in Sources */ = {isa = PBXBuildFile; fileRef = 125738DC1C9F577A0064DF03 /* ShortFormAcronymData.m */; };
+		125738E01C9F5A320064DF03 /* LongFormAcronymData.m in Sources */ = {isa = PBXBuildFile; fileRef = 125738DF1C9F5A320064DF03 /* LongFormAcronymData.m */; };
 		4710D72EBF4A2BEBCB10B1DE /* libPods-AcronymFinder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E84B1381A96ED6C351CB48A4 /* libPods-AcronymFinder.a */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +35,10 @@
 		125738D21C9F4F930064DF03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		125738D41C9F4F990064DF03 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		125738D61C9F4FA30064DF03 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		125738DB1C9F577A0064DF03 /* ShortFormAcronymData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShortFormAcronymData.h; sourceTree = "<group>"; };
+		125738DC1C9F577A0064DF03 /* ShortFormAcronymData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShortFormAcronymData.m; sourceTree = "<group>"; };
+		125738DE1C9F5A320064DF03 /* LongFormAcronymData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LongFormAcronymData.h; sourceTree = "<group>"; };
+		125738DF1C9F5A320064DF03 /* LongFormAcronymData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LongFormAcronymData.m; sourceTree = "<group>"; };
 		B337493AA4F73D8789DF2475 /* Pods-AcronymFinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AcronymFinder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AcronymFinder/Pods-AcronymFinder.debug.xcconfig"; sourceTree = "<group>"; };
 		D578581B977F2C783B434D96 /* Pods-AcronymFinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AcronymFinder.release.xcconfig"; path = "Pods/Target Support Files/Pods-AcronymFinder/Pods-AcronymFinder.release.xcconfig"; sourceTree = "<group>"; };
 		E84B1381A96ED6C351CB48A4 /* libPods-AcronymFinder.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AcronymFinder.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,6 +105,10 @@
 		125738D11C9F4DCA0064DF03 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				125738DB1C9F577A0064DF03 /* ShortFormAcronymData.h */,
+				125738DC1C9F577A0064DF03 /* ShortFormAcronymData.m */,
+				125738DE1C9F5A320064DF03 /* LongFormAcronymData.h */,
+				125738DF1C9F5A320064DF03 /* LongFormAcronymData.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -245,6 +255,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				125738BF1C9F48E60064DF03 /* ViewController.m in Sources */,
+				125738E01C9F5A320064DF03 /* LongFormAcronymData.m in Sources */,
+				125738DD1C9F577A0064DF03 /* ShortFormAcronymData.m in Sources */,
 				125738BC1C9F48E60064DF03 /* AppDelegate.m in Sources */,
 				125738B91C9F48E60064DF03 /* main.m in Sources */,
 			);
