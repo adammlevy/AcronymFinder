@@ -20,6 +20,7 @@
 		125738E01C9F5A320064DF03 /* LongFormAcronymData.m in Sources */ = {isa = PBXBuildFile; fileRef = 125738DF1C9F5A320064DF03 /* LongFormAcronymData.m */; };
 		125738E31C9F5D1C0064DF03 /* AcronymFinderAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 125738E21C9F5D1C0064DF03 /* AcronymFinderAPI.m */; };
 		125738E71C9F68960064DF03 /* AcronymTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 125738E61C9F68960064DF03 /* AcronymTableViewCell.m */; };
+		125738EB1C9F720D0064DF03 /* AcronymVariationsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 125738EA1C9F720D0064DF03 /* AcronymVariationsTableViewController.m */; };
 		4710D72EBF4A2BEBCB10B1DE /* libPods-AcronymFinder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E84B1381A96ED6C351CB48A4 /* libPods-AcronymFinder.a */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,8 @@
 		125738E21C9F5D1C0064DF03 /* AcronymFinderAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AcronymFinderAPI.m; sourceTree = "<group>"; };
 		125738E51C9F68960064DF03 /* AcronymTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AcronymTableViewCell.h; sourceTree = "<group>"; };
 		125738E61C9F68960064DF03 /* AcronymTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AcronymTableViewCell.m; sourceTree = "<group>"; };
+		125738E91C9F720D0064DF03 /* AcronymVariationsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AcronymVariationsTableViewController.h; sourceTree = "<group>"; };
+		125738EA1C9F720D0064DF03 /* AcronymVariationsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AcronymVariationsTableViewController.m; sourceTree = "<group>"; };
 		B337493AA4F73D8789DF2475 /* Pods-AcronymFinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AcronymFinder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AcronymFinder/Pods-AcronymFinder.debug.xcconfig"; sourceTree = "<group>"; };
 		D578581B977F2C783B434D96 /* Pods-AcronymFinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AcronymFinder.release.xcconfig"; path = "Pods/Target Support Files/Pods-AcronymFinder/Pods-AcronymFinder.release.xcconfig"; sourceTree = "<group>"; };
 		E84B1381A96ED6C351CB48A4 /* libPods-AcronymFinder.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AcronymFinder.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,6 +89,7 @@
 		125738B61C9F48E60064DF03 /* AcronymFinder */ = {
 			isa = PBXGroup;
 			children = (
+				125738E81C9F71C90064DF03 /* Acronym Variations Table */,
 				125738E41C9F68510064DF03 /* Acronym Search Table */,
 				125738D11C9F4DCA0064DF03 /* Model */,
 				125738BA1C9F48E60064DF03 /* AppDelegate.h */,
@@ -129,6 +133,15 @@
 				125738E61C9F68960064DF03 /* AcronymTableViewCell.m */,
 			);
 			name = "Acronym Search Table";
+			sourceTree = "<group>";
+		};
+		125738E81C9F71C90064DF03 /* Acronym Variations Table */ = {
+			isa = PBXGroup;
+			children = (
+				125738E91C9F720D0064DF03 /* AcronymVariationsTableViewController.h */,
+				125738EA1C9F720D0064DF03 /* AcronymVariationsTableViewController.m */,
+			);
+			name = "Acronym Variations Table";
 			sourceTree = "<group>";
 		};
 		DA13A5067CABA32D3C36B2A0 /* Pods */ = {
@@ -273,6 +286,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				125738BF1C9F48E60064DF03 /* ViewController.m in Sources */,
+				125738EB1C9F720D0064DF03 /* AcronymVariationsTableViewController.m in Sources */,
 				125738E71C9F68960064DF03 /* AcronymTableViewCell.m in Sources */,
 				125738E01C9F5A320064DF03 /* LongFormAcronymData.m in Sources */,
 				125738DD1C9F577A0064DF03 /* ShortFormAcronymData.m in Sources */,

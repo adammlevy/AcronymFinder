@@ -12,6 +12,7 @@
 #import "LongFormAcronymData.h"
 #import "AcronymTableViewCell.h"
 #import "MBProgressHUD.h"
+#import "AcronymVariationsTableViewController.h"
 
 @interface ViewController () <UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate>
 
@@ -74,6 +75,14 @@
     cell.yearUsedSince.text = [longForm.yearUsedSince stringValue];
     
     return cell;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"AcronymSelected"]) {
+        AcronymVariationsTableViewController *tableViewController = segue.destinationViewController;
+        NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
+        tableViewController.acronymData = [self.searchAcronym.longForm objectAtIndex:selectedIndexPath.row];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
