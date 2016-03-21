@@ -44,18 +44,43 @@
                 [hud hide:YES afterDelay:5];
             });
         } else {
-            NSLog(@"fetched: %@", acronyms);
-            NSDictionary *acronym = [acronyms objectAtIndex:0];
-            ShortFormAcronymData *acronymData = [[ShortFormAcronymData alloc] initWithDictionary:acronym];
-            self.searchAcronym = acronymData;
-            
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [MBProgressHUD hideAllHUDsForView:self.tableView animated:YES];
-                [self.tableView reloadData];
-            });
+            if ([acronyms count] > 0) {
+                NSDictionary *acronym = [acronyms objectAtIndex:0];
+                ShortFormAcronymData *acronymData = [[ShortFormAcronymData alloc] initWithDictionary:acronym];
+                self.searchAcronym = acronymData;
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [MBProgressHUD hideAllHUDsForView:self.tableView animated:YES];
+                    [self.tableView reloadData];
+                });
+            } else {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [MBProgressHUD hideAllHUDsForView:self.tableView animated:YES];
+                    
+                    MBProgressHUD *textHud = [MBProgressHUD showHUDAddedTo:self.tableView animated:YES];
+                    textHud.mode = MBProgressHUDModeText;
+                    textHud.detailsLabelText = @"No results found for entered acronym";
+                    [textHud hide:YES afterDelay:5];
+                });
+            }
         }
         
     }];
+}
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    [self clearSearchResults];
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+    [self clearSearchResults];
+}
+
+- (void)clearSearchResults {
+    if (self.searchAcronym) {
+        self.searchAcronym = nil;
+        [self.tableView reloadData];
+    }
 }
 
 #pragma mark - UITableView Datasource & Delegate
@@ -64,7 +89,9 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.searchAcronym.longForm.count;
+    if (self.searchAcronym)
+        return self.searchAcronym.longForm.count;
+    return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
