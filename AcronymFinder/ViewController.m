@@ -35,6 +35,8 @@
     
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.tableView animated:YES];
     hud.labelText = @"Loading";
+    [searchBar resignFirstResponder];
+    
     [api fetchAcronymMeaningsWithAcronym:searchBar.text completion:^(NSArray *acronyms, NSError *error) {
         if (error) {
             dispatch_async(dispatch_get_main_queue(), ^{
