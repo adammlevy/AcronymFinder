@@ -109,6 +109,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"AcronymSelected"]) {
         AcronymVariationsTableViewController *tableViewController = segue.destinationViewController;
+        tableViewController.title = self.searchAcronym.shortForm;
         NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
         tableViewController.acronymData = [self.searchAcronym.longForm objectAtIndex:selectedIndexPath.row];
     }
