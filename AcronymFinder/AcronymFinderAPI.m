@@ -7,15 +7,15 @@
 //
 
 #import "AcronymFinderAPI.h"
+#import "AFNetworking.h"
 
 #define AcromineEndpoint @"http://www.nactem.ac.uk/software/acromine/dictionary.py"
 
 @implementation AcronymFinderAPI
 
 - (void)fetchAcronymMeaningsWithAcronym:(NSString *)acronym completion:(void(^)(NSArray *acronyms, NSError *error))completion {
-    NSDictionary *params = @{@"sf" : acronym};
-    NSURLSession *session = [NSURLSession sharedSession];
     
+    NSDictionary *params = @{@"sf" : acronym};
     NSURLComponents *components = [NSURLComponents componentsWithString:AcromineEndpoint];
     NSMutableArray *queryItems = [NSMutableArray array];
     for (NSString *key in params) {
@@ -23,20 +23,25 @@
     }
     components.queryItems = queryItems;
     
-    [[session dataTaskWithURL:[components URL]
-            completionHandler:^(NSData *data,
-                                NSURLResponse *response,
-                                NSError *error) {
-                if (error) {
-                    completion(nil, error);
-                } else {
-                    NSError* jsonError;
-                    NSArray* json = [NSJSONSerialization JSONObjectWithData:data
-                                                                    options:kNilOptions
-                                                                      error:&jsonError];
-                    completion(json, error);
-                }
-            }] resume];
+
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    
+    NSURLRequest *request = [NSURLRequest requestWithURL:[components URL]];
+    
+    NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, NSData * responseObject, NSError *error) {
+        if (error) {
+            completion(nil, error);
+        } else {
+            NSError* jsonError;
+            NSArray* json = [NSJSONSerialization JSONObjectWithData:responseObject
+                                                            options:kNilOptions
+                                                              error:&jsonError];
+            completion(json, error);
+        }
+    }];
+    [dataTask resume];
 }
 
 @end
