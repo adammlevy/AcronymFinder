@@ -40,10 +40,13 @@
     [api fetchAcronymMeaningsWithAcronym:searchBar.text completion:^(NSArray *acronyms, NSError *error) {
         if (error) {
             dispatch_async(dispatch_get_main_queue(), ^{
-                hud.labelText = @"Error Fetching Acronym";
-                hud.detailsLabelText = [error localizedDescription];
-                MBProgressHUD *hud = [MBProgressHUD HUDForView:self.tableView];
-                [hud hide:YES afterDelay:5];
+                [MBProgressHUD hideAllHUDsForView:self.tableView animated:YES];
+                
+                MBProgressHUD *textHud = [MBProgressHUD showHUDAddedTo:self.tableView animated:YES];
+                textHud.mode = MBProgressHUDModeText;
+                textHud.labelText = @"Eerror Fetching Acronym";
+                textHud.detailsLabelText = [error localizedDescription];
+                [textHud hide:YES afterDelay:5];
             });
         } else {
             if ([acronyms count] > 0) {
